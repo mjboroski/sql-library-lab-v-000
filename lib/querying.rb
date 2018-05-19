@@ -12,7 +12,7 @@ def select_value_and_count_of_most_prolific_species
 end
 
 def select_name_and_series_subgenres_of_authors
-  "SELECT title, year FROM books WHERE series_id=1 ORDER BY year"
+  "SELECT author.name, series.title, subgenres.name FROM authors WHERE series.author_id=author.id, series.subgenre_id=subgenre.id"
 end
 
 def select_series_title_with_most_human_characters
